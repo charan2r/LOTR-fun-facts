@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-box {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact Generator</h1>
+        <div id="fact" class="fact-box">
+            Click the button to see a fun facts about Lord of the Rings series
+        </div>
+        <button id="generate-btn">Generate Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+           "J.R.R. Tolkien wrote 'The Lord of the Rings' as a sequel to his 1937 fantasy novel 'The Hobbit'.",
+           "The entire 'Lord of the Rings' trilogy was filmed simultaneously over an eight-year period.",
+           "Viggo Mortensen, who played Aragorn, broke two toes while filming the scene where he kicks a helmet.",
+           "The Elvish language spoken in the films was created by J.R.R. Tolkien himself.",
+           "The character Gollum was performed by Andy Serkis using motion capture technology, a pioneering technique at the time.",
+           "The role of Gandalf was originally offered to Sean Connery, who turned it down because he didn't understand the script.",
+           "The Battle of Helm's Deep took four months to shoot, and was filmed mostly at night.",
+           "Christopher Lee, who played Saruman, was the only cast member to have met J.R.R. Tolkien.",
+           "The sound of the Nazgûl screech was created by scraping plastic cups together.",
+           "Orlando Bloom, who played Legolas, learned to surf during filming in New Zealand."
+        ];
+
+        document.getElementById('generate-btn').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
